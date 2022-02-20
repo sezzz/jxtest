@@ -1,0 +1,22 @@
+# Source: pyhton-test/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    meta.helm.sh/release-name: 'pyhton-test'
+  name: pyhton-test
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: pyhton-test
+                port:
+                  number: 80
+      host: pyhton-test-jx-staging.192.168.49.2.nip.io
