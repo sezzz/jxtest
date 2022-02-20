@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: sezzz
+    provider: github
+    repository: pyhton-test
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: sezzz-pyhton-test
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/sezzz/pyhton-test.git
+  org: sezzz
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: pyhton-test
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/sezzz/pyhton-test
