@@ -1,0 +1,10 @@
+# Source: pyhton-test/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: pyhton-test-pyhton-test
+  annotations:
+    meta.helm.sh/release-name: 'pyhton-test'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
